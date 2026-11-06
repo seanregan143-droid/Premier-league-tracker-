@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Leaving Certificate Computer Science ALT1 portfolio: Premier League Statistics Tracker.">
+  <title>ALT1 | Premier League Statistics Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#home">ALT1 <span>| FOOTBALL</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#brief">Brief</a>
+      <a href="#investigation">Investigation</a>
+      <a href="#planning">Planning</a>
+      <a href="#design">Design</a>
+      <a href="#implementation">Implementation</a>
+      <a href="#testing">Testing</a>
+      <a href="#evaluation">Evaluation</a>
+      <a href="#references">References</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <p class="eyebrow">LEAVING CERTIFICATE COMPUTER SCIENCE · ALT 1</p>
+      <h1>The Beautiful Game,<br><span>Through Data.</span></h1>
+      <p class="intro">A Premier League Statistics Tracker covering team results, player performances and league trends across five seasons.</p>
+      <a class="button" href="#brief">Explore the project</a>
+    </section>
+
+    <section class="facts" aria-label="Project facts">
+      <div><strong>5</strong><span>Premier League seasons</span></div>
+      <div><strong>380</strong><span>Matches per full season</span></div>
+      <div><strong>6</strong><span>Application sections</span></div>
+    </section>
+
+    <section class="section" id="brief">
+      <p class="section-label">01 / MEETING THE BRIEF</p>
+      <h2>Meeting the brief</h2>
+      <p>My project is a Premier League Statistics Tracker covering five seasons, from 2021–22 to 2025–26. It brings match results, team standings and player statistics together in one website. Users can choose a season and move between different sections instead of searching through separate statistics pages.</p>
+      <p>The application was built using Python and Streamlit. Pandas is used to read and filter the CSV datasets. The project contains three main data files: match information, player statistics and calculated league tables. An SQLite database is also included in the project, although the current website reads the CSV files directly and does not query the database.</p>
+      <p>The website has six main sections: Home, Players, Matches, League Table, Rankings and Analytics. Users can select a season, choose a player and view information in tables or charts. The intended users are football fans who want to explore historical Premier League data in a straightforward way.</p>
+
+      <div class="video-box">
+        <h3>Video presentation</h3>
+        <p>The video shows a walkthrough of the finished tracker and demonstrates its main pages and features. I used an AI tool to help edit the video only. The application code and portfolio content were developed separately.</p>
+        <video controls preload="metadata" playsinline>
+          <source src="assets/meeting-the-brief-video.mp4" type="video/mp4">
+          Your browser does not support the video element.
+          <a href="assets/meeting-the-brief-video.mp4">Open the video presentation</a>.
+        </video>
+      </div>
+    </section>
+
+    <section class="section" id="investigation">
+      <p class="section-label">02 / INVESTIGATION</p>
+      <h2>Understanding the problem</h2>
+      <p>The Premier League produces a large amount of information every season, including match results, team performance, league standings and player statistics. Football fans may want to compare clubs, check a player's contribution or see how goals and points are distributed. This information can be spread across different websites, so I wanted to bring it together in one place.</p>
+      <p>The intended users need to select a season, find a player or team, view match results and compare performances. This meant the website needed clear navigation, readable tables, useful column headings and charts that make comparisons easier to understand.</p>
+      <p>I considered how to store and process the information. CSV files are straightforward to read and process with Pandas. A relational database can organise related records into separate tables. My project includes an SQLite database, but the current version of the website reads the CSV files directly.</p>
+      <p>My aim was to make historical football statistics easier to access. I judged the idea by whether a user could find the information they needed and understand what the tables and charts were showing.</p>
+    </section>
+
+    <section class="section" id="planning">
+      <p class="section-label">03 / PLAN</p>
+      <h2>Planning the system</h2>
+      <p>My hypothesis was that an interactive website would make Premier League statistics easier to access and compare. I planned six sections: Home, Players, Matches, League Table, Rankings and Analytics.</p>
+      <p>I chose Python and Streamlit to build the website. Pandas would read and filter the datasets, while Streamlit would create the pages, selection boxes, tables and charts. I planned to prepare the data first, build each page, add the season and player selections, and then test the information shown by the application.</p>
+      <p>I also planned to keep the layout consistent. A sidebar is used for navigation and season selection, so users do not have to learn a different layout for each page.</p>
+    </section>
+
+    <section class="section" id="design">
+      <p class="section-label">04 / DESIGN</p>
+      <h2>Designing the system</h2>
+      <p>The system takes information from the CSV datasets, processes and filters it with Pandas, and displays the results through Streamlit. The SQLite database is included as part of the project, but it is not currently queried by the website.</p>
+      <p>The Home page gives an overview of the selected season. Players focuses on an individual player, Matches lists fixtures and scores, League Table shows team standings, Rankings orders player statistics, and Analytics uses charts to compare teams and scoring.</p>
+      <p>The final colour scheme uses a white background, deep navy headings and navigation, blue highlights and pale-blue panels. I chose this brighter design to make the information easier to read. The same colours are used in the portfolio so that it matches the application.</p>
+
+      <h3>Planning diagrams</h3>
+      <div class="image-grid">
+        <figure><a href="assets/15-database-erd.png" target="_blank"><img src="assets/15-database-erd.png" alt="Entity relationship diagram"></a><figcaption>Figure 1: Entity Relationship Diagram</figcaption></figure>
+        <figure><a href="assets/16-system-architecture.png" target="_blank"><img src="assets/16-system-architecture.png" alt="System architecture diagram"></a><figcaption>Figure 2: System Architecture</figcaption></figure>
+        <figure><a href="assets/17-project-flowchart.png" target="_blank"><img src="assets/17-project-flowchart.png" alt="Project flowchart"></a><figcaption>Figure 3: Project Flowchart</figcaption></figure>
+        <figure><a href="assets/18-homepage-wireframe.png" target="_blank"><img src="assets/18-homepage-wireframe.png" alt="Homepage wireframe"></a><figcaption>Figure 4: Homepage Wireframe</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section" id="implementation">
+      <p class="section-label">05 / IMPLEMENTATION</p>
+      <h2>Building the application</h2>
+      <p>The main program is called <code>premier_league_tracker.py</code>. It uses Streamlit to build the website and Pandas to read the match, player and league-table CSV files. The selected season is used to filter the datasets before the relevant page is displayed.</p>
+      <p>The Home page shows an overview of the selected season, including match and goal statistics. The Players page lets the user select a player and view details such as their club, position, goals, assists, appearances and other statistics. Matches displays fixtures and results. League Table shows the final standings, Rankings displays lists such as top scorers and assist leaders, and Analytics displays charts for team comparisons.</p>
+
+      <h3>How I developed my code</h3>
+      <p>As I developed the project, I had to learn how to use Python libraries and Streamlit features that I had not used before. I used the official documentation for Python, Pandas and Streamlit, as well as W3Schools tutorials, to learn about different programming concepts. I read explanations and examples, tried ideas in my own project and changed them to suit the datasets I was using.</p>
+      <p>I also used ChatGPT as a learning resource when I was unsure how to approach a coding problem or wanted an explanation of a Python or Streamlit feature. I used the explanations to help me understand the steps involved, then wrote and adapted the code myself. I did not copy and paste code directly from ChatGPT into my project. I tested my own code and made changes when the result was not what I expected.</p>
+      <p>For example, I needed to learn how to load CSV files and select records for one season. I used Pandas' <code>read_csv()</code> function to load the data, then used filtering to create a smaller dataset for the season selected by the user. I checked the results by comparing the records shown on the website with the source data.</p>
+      <p>I also had to work out how to display tables and make them easier to understand. I used Streamlit's dataframe display and column configuration options. Some of the original column names were joined together, so I created a function that changes technical names into clearer labels without changing the actual column names used by the program.</p>
+      <p>When errors occurred, I read the error message, checked the relevant part of the code and tried to identify what was causing the problem. One example was making sure that the program could find the data folder when it was started. I used the location of the Python file to build the data-file paths, rather than relying on the folder from which the program happened to be launched.</p>
+      <p>This process helped me understand how the different parts of the application work together. I learned by reading documentation, testing small changes and checking whether the result was what I expected.</p>
+
+      <h3>Examples from my code</h3>
+      <p><strong>Loading the datasets:</strong> Pandas reads the CSV files into dataframes.</p>
+      <pre><code>matches = pd.read_csv(DATA_DIR / "matches_2021-22_to_2025-26.csv")
+players = pd.read_csv(DATA_DIR / "player_season_stats.csv")
+tables = pd.read_csv(DATA_DIR / "calculated_league_tables.csv")</code></pre>
+      <p><strong>Filtering by season:</strong> The selected season is used to filter each dataframe.</p>
+      <pre><code>season_matches = matches[matches["Season"] == season]
+season_players = players[players["season"] == season]
+season_table = tables[tables["Season"] == season]</code></pre>
+      <p><strong>Displaying a table:</strong> Streamlit displays the selected data without showing the dataframe index.</p>
+      <pre><code>st.dataframe(
+    data,
+    hide_index=True,
+    column_config=column_settings
+)</code></pre>
+
+      <h3>Application screenshots</h3>
+      <p>The screenshots show the six main sections and examples of the information available to the user.</p>
+      <div class="image-grid">
+        <figure><a href="assets/01-home-overview.png" target="_blank"><img src="assets/01-home-overview.png" alt="Home dashboard"></a><figcaption>Figure 5: Home dashboard</figcaption></figure>
+        <figure><a href="assets/02-home-tables.png" target="_blank"><img src="assets/02-home-tables.png" alt="Home page tables"></a><figcaption>Figure 6: Home page tables</figcaption></figure>
+        <figure><a href="assets/03-player-centre.png" target="_blank"><img src="assets/03-player-centre.png" alt="Player Centre"></a><figcaption>Figure 7: Player Centre</figcaption></figure>
+        <figure><a href="assets/04-player-details.png" target="_blank"><img src="assets/04-player-details.png" alt="Player details"></a><figcaption>Figure 8: Player details</figcaption></figure>
+        <figure><a href="assets/05-match-centre.png" target="_blank"><img src="assets/05-match-centre.png" alt="Match Centre"></a><figcaption>Figure 9: Match Centre</figcaption></figure>
+        <figure><a href="assets/06-league-table.png" target="_blank"><img src="assets/06-league-table.png" alt="League Table"></a><figcaption>Figure 10: League Table</figcaption></figure>
+        <figure><a href="assets/07-points-comparison.png" target="_blank"><img src="assets/07-points-comparison.png" alt="Points comparison"></a><figcaption>Figure 11: Points comparison</figcaption></figure>
+        <figure><a href="assets/08-player-goal-rankings.png" target="_blank"><img src="assets/08-player-goal-rankings.png" alt="Goal rankings"></a><figcaption>Figure 12: Goal rankings</figcaption></figure>
+        <figure><a href="assets/09-player-assist-rankings.png" target="_blank"><img src="assets/09-player-assist-rankings.png" alt="Assist rankings"></a><figcaption>Figure 13: Assist rankings</figcaption></figure>
+        <figure><a href="assets/10-player-appearance-rankings.png" target="_blank"><img src="assets/10-player-appearance-rankings.png" alt="Appearance rankings"></a><figcaption>Figure 14: Appearance rankings</figcaption></figure>
+        <figure><a href="assets/11-player-clean-sheets.png" target="_blank"><img src="assets/11-player-clean-sheets.png" alt="Clean sheet rankings"></a><figcaption>Figure 15: Clean sheet rankings</figcaption></figure>
+        <figure><a href="assets/12-analytics-overview.png" target="_blank"><img src="assets/12-analytics-overview.png" alt="Analytics overview"></a><figcaption>Figure 16: Analytics overview</figcaption></figure>
+        <figure><a href="assets/13-team-goals-analytics.png" target="_blank"><img src="assets/13-team-goals-analytics.png" alt="Team goals analytics"></a><figcaption>Figure 17: Team goals analytics</figcaption></figure>
+        <figure><a href="assets/14-team-points-analytics.png" target="_blank"><img src="assets/14-team-points-analytics.png" alt="Team points analytics"></a><figcaption>Figure 18: Team points analytics</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section" id="testing">
+      <p class="section-label">06 / TESTING</p>
+      <h2>Testing the system</h2>
+      <p>I tested the data and the main parts of the website to check that the information was being displayed correctly. The data checks covered all five seasons. Each full Premier League season should contain 380 matches and 20 teams. I also recalculated the league tables from the match results and checked the average-goals calculation used on the dashboard.</p>
+      <p>I checked player records as well. Some statistics are missing from the original dataset, so I checked that these missing values did not stop the player page from loading. The navigation links in the portfolio were also checked to make sure that they pointed to the correct sections.</p>
+
+      <h3>Data and feature tests</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Test</th><th>Expected result</th><th>Recorded result</th></tr></thead>
+          <tbody>
+            <tr><td>T1</td><td>Filter data by each season.</td><td>Only records from the selected season are returned.</td><td>Pass: all five seasons returned 380 matches, 20 teams and player records.</td></tr>
+            <tr><td>T2</td><td>Select a player from a season.</td><td>The selected player has a matching record and statistics.</td><td>Pass: player names and season records are present in all five season groups.</td></tr>
+            <tr><td>T3</td><td>Compare match CSV records with the SQLite matches table.</td><td>Match details and scores are the same.</td><td>Pass: all 1,900 match records match.</td></tr>
+            <tr><td>T4</td><td>Recalculate the league table from match results.</td><td>Played, wins, draws, losses, goals and points match the table.</td><td>Pass: all 100 team-season rows match the recalculation.</td></tr>
+            <tr><td>T5</td><td>Recalculate average goals for each season.</td><td>Total home and away goals divided by matches matches the displayed average.</td><td>Pass: all five calculated averages match the application formula.</td></tr>
+            <tr><td>T6</td><td>Check player records with missing statistics.</td><td>Missing values do not stop the player page from loading.</td><td>Pass: missing values are handled by the existing Pandas calculations and displayed in the player table.</td></tr>
+            <tr><td>T7</td><td>Check portfolio navigation links.</td><td>Each link opens its matching section.</td><td>Pass: all navigation links point to an existing section ID.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>External user testing</h3>
+      <p>I asked my father to test the website because he was not involved in developing it. He went through the whole website and gave me feedback about its appearance and the way information was displayed in the tables.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Feedback</th><th>Action taken</th><th>Outcome</th></tr></thead>
+          <tbody>
+            <tr><td>The website should be brighter.</td><td>I changed the colour scheme to a white background, navy headings and blue highlights.</td><td>Completed: the website now has a brighter appearance.</td></tr>
+            <tr><td>The numbers in the tables should appear directly underneath their column headings.</td><td>I attempted to adjust the table alignment.</td><td>Not fully resolved. This remains an area for improvement.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>This feedback was useful because it came from someone who had not worked on the project. I made a change based on the colour feedback, but I have not yet managed to solve the table alignment issue. I have recorded this honestly as something that could still be improved.</p>
+    </section>
+
+    <section class="section" id="evaluation">
+      <p class="section-label">07 / EVALUATION</p>
+      <h2>Evaluating the project</h2>
+      <p>My original aim was to make Premier League statistics easier to access and compare. The finished application brings season summaries, player statistics, match results, league standings, rankings and team analytics together in one place. This supports the aim of the project.</p>
+      <p>A strength of the website is that information is separated into clear sections. The Home page gives a quick overview, while Players and Matches provide more detail. League Table, Rankings and Analytics give users different ways to compare teams and players. The season selector also allows users to explore several years without opening a separate application for each season.</p>
+      <p>There are still areas that could be improved. The alignment of numbers in tables does not yet fully match the column headings, as identified during external user testing. Some player statistics are missing from the source data, and the application currently uses historical rather than live information. The SQLite database is included in the project but is not yet connected to the website.</p>
+      <p>If I continued the project, I would resolve the table alignment issue, improve the display of missing values, add a way to compare two players or teams, and connect the website directly to the SQLite database. I would also carry out further user testing after making these changes.</p>
+      <p>Overall, the project provides an interactive way to explore five seasons of Premier League data. Developing it helped me improve my understanding of Python, Pandas, Streamlit, data handling and testing a software application.</p>
+    </section>
+
+    <section class="section" id="references">
+      <p class="section-label">08 / REFERENCES</p>
+      <h2>References</h2>
+      <p>The following sources were used for the project data and to help me understand the programming tools used to develop the application.</p>
+      <ul class="references">
+        <li>Match results and match statistics: <a href="https://www.football-data.co.uk/" target="_blank" rel="noopener">Football-Data.co.uk</a></li>
+        <li>Player statistics: <a href="https://github.com/imadeddine-belkat/Premier-League-Stats" target="_blank" rel="noopener">Premier League Stats dataset on GitHub</a></li>
+        <li>Python documentation: <a href="https://docs.python.org/3/" target="_blank" rel="noopener">Python</a></li>
+        <li>Pandas documentation: <a href="https://pandas.pydata.org/docs/" target="_blank" rel="noopener">Pandas</a></li>
+        <li>Streamlit documentation: <a href="https://docs.streamlit.io/" target="_blank" rel="noopener">Streamlit</a></li>
+        <li>SQLite documentation: <a href="https://www.sqlite.org/docs.html" target="_blank" rel="noopener">SQLite</a></li>
+        <li>Plotly documentation: <a href="https://plotly.com/python/" target="_blank" rel="noopener">Plotly Python</a></li>
+        <li>W3Schools tutorials: <a href="https://www.w3schools.com/" target="_blank" rel="noopener">W3Schools</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#home">ALT1 <span>| FOOTBALL</span></a>
+    <p>Leaving Certificate Computer Science · Premier League Statistics Tracker</p>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+</body>
+</html>
