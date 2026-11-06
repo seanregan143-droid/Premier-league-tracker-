@@ -42,27 +42,25 @@ p, label {
 
 # Make column names easier to read
 def clean_column_name(column):
-    column = str(column)
-    column = column.replace("_", " ")
 
     special_names = {
         "playerId": "Player ID",
         "playerName": "Player Name",
         "team_id": "Team ID",
         "team_name": "Team Name",
+        "goalAssists": "Goal Assists",
+        "expectedGoals": "Expected Goals",
+        "expectedAssists": "Expected Assists",
         "FTHG": "Home Goals",
         "FTAG": "Away Goals",
         "GF": "Goals For",
-        "GA": "Goals Against",
-        "xG": "Expected Goals",
-        "xA": "Expected Assists"
+        "GA": "Goals Against"
     }
 
     if column in special_names:
         return special_names[column]
 
-    return column.title()
-
+    return str(column).replace("_", " ").title()
 
 # Display a dataframe with clearer column names
 def show_table(data):
