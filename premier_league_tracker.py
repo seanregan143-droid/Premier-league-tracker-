@@ -13,7 +13,7 @@ st.set_page_config(
 
 # Find data folder
 BASE_DIR = Path(__file__).resolve().parent
-DATA_DIR = BASE_DIR / "data"
+DATA_DIR = BASE_DIR 
 
 
 # Website colours
